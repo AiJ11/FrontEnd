@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Thu Apr 24 12:03:55 2025
+# Make data base, printed on Thu Apr 24 23:16:54 2025
 
 # Variables
 
@@ -21,8 +21,6 @@ OPAM_SWITCH_PREFIX = /Users/apple/.opam/5.1.0
 OCAML_TOPLEVEL_PATH = /Users/apple/.opam/5.1.0/lib/toplevel
 # environment
 VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
-# makefile (from `Makefile', line 15)
-TARGET = api_parser
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -30,7 +28,7 @@ TARGET = api_parser
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/apple/Desktop/simpledeep 2
+CURDIR := /Users/apple/Desktop/simpledeepflex
 # makefile
 SHELL = /bin/sh
 # environment
@@ -39,14 +37,16 @@ VSCODE_NLS_CONFIG = {"userLocale":"en-gb","osLocale":"en-in","resolvedLanguage":
 _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
-# makefile (from `Makefile', line 3)
-CXXFLAGS = -std=c++17 -Wall -I. -g
+# makefile (from `Makefile', line 2)
+CXXFLAGS = -std=c++14 -Wall -g
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 VSCODE_CWD = /
 # environment
 PATH = /Users/apple/.opam/5.1.0/bin:/usr/local/opt/bison/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/TeX/texbin:/Users/apple/Library/Application Support/org.dfinity.dfx/bin:/Users/apple/.cargo/bin
+# makefile (from `Makefile', line 4)
+YACC = bison
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
@@ -55,12 +55,8 @@ ELECTRON_RUN_AS_NODE = 1
 SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.bTfH0pepMn/Listeners
 # automatic
 %F = $(notdir $%)
-# makefile (from `Makefile', line 6)
-LEX_SRC = lex.yy.cc
-# makefile (from `Makefile', line 12)
-OBJS = $(SRCS:.cc=.o)
 # environment
-PWD = /Users/apple/Desktop/simpledeep 2
+PWD = /Users/apple/Desktop/simpledeepflex
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -87,8 +83,6 @@ XPC_FLAGS = 0x0
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
-# makefile (from `Makefile', line 11)
-SRCS = ast.cc ASTVis.cc main.cc $(BISON_SRC) $(LEX_SRC)
 # environment
 SHLVL = 1
 # environment
@@ -117,6 +111,8 @@ TMPDIR = /var/folders/s8/f5g2tsvx62jdr7wg1k_fczsr0000gn/T/
 VSCODE_IPC_HOOK = /Users/apple/Library/Application Support/Code/1.99-main.sock
 # environment
 MallocNanoZone = 0
+# makefile (from `Makefile', line 3)
+LEX = flex
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -131,8 +127,6 @@ XPC_SERVICE_NAME = application.com.microsoft.VSCode.29230234.29230240
 VSCODE_L10N_BUNDLE_LOCATION = 
 # automatic
 +F = $(notdir $+)
-# makefile (from `Makefile', line 8)
-BISON_HDR = parser.tab.hh
 # environment
 __CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
 # environment
@@ -141,12 +135,10 @@ COMMAND_MODE = unix2003
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
-# makefile (from `Makefile', line 2)
+# makefile (from `Makefile', line 1)
 CXX = g++
 # environment
 LC_ALL = C
-# makefile (from `Makefile', line 7)
-BISON_SRC = parser.tab.cc
 # automatic
 ^F = $(notdir $^)
 # default
@@ -160,7 +152,7 @@ LANG = C
 # environment
 VSCODE_PID = 773
 # variable set hash-table stats:
-# Load=74/1024=7%, Rehash=0, Collisions=8/113=7%
+# Load=70/1024=7%, Rehash=0, Collisions=1/94=1%
 
 # Pattern-specific Variable Values
 
@@ -168,34 +160,31 @@ VSCODE_PID = 773
 
 # Directories
 
-# . (device 16777223, inode 29265045): 25 files, no impossibilities.
+# . (device 16777223, inode 29293854): 22 files, no impossibilities.
 
-# 25 files, no impossibilities in 1 directories.
+# 22 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
-%.o: %.cc
-#  commands to execute (from `Makefile', line 25):
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
-	
-
-# 1 implicit rules, 0 (0.0%) terminal.
+# No implicit rules.
 
 # Files
 
 parser.tab.cc: parser.yy
 #  Implicit rule search has not been done.
-#  Last modified 2025-04-24 02:58:11
+#  Last modified 2025-04-24 22:44:24
 #  File has been updated.
 #  Successfully updated.
-#  commands to execute (from `Makefile', line 31):
-	bison -d -o $(BISON_SRC) $<
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 10):
+	$(YACC) -d parser.yy
 	
 
 # Not a target:
 parser.yy:
 #  Implicit rule search has been done.
-#  Last modified 2025-04-24 02:57:58
+#  Last modified 2025-04-24 22:13:26
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -204,7 +193,7 @@ parser.yy:
 # Not a target:
 ASTVis.cc:
 #  Implicit rule search has been done.
-#  Last modified 2025-04-23 23:45:34
+#  Last modified 2025-04-24 22:43:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -216,35 +205,14 @@ all: api_parser
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 .PHONY: all clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-# Not a target:
-ast.hh:
-#  Implicit rule search has been done.
-#  Last modified 2025-04-24 01:05:39
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-lex.yy.o: lex.yy.cc lex.yy.cc parser.tab.hh
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `lex.yy'
-#  Last modified 2025-04-24 02:58:14
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
-	
 
 # Not a target:
 .SUFFIXES:
@@ -255,164 +223,89 @@ lex.yy.o: lex.yy.cc lex.yy.cc parser.tab.hh
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2025-04-24 02:24:42
+#  Last modified 2025-04-24 22:13:26
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-lex.yy.cc: lexer.ll parser.tab.hh
-#  Implicit rule search has not been done.
-#  Last modified 2025-04-24 02:58:13
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 28):
-	flex -o $@ $<
-	
 
 parser.tab.hh: parser.yy
 #  Implicit rule search has not been done.
-#  Last modified 2025-04-24 02:58:11
+#  Last modified 2025-04-24 22:44:24
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 10):
+	$(YACC) -d parser.yy
+	
+
+lex.yy.c: lexer.ll parser.tab.hh
+#  Implicit rule search has not been done.
+#  Last modified 2025-04-24 22:44:24
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 31):
-	bison -d -o $(BISON_SRC) $<
+#  commands to execute (from `Makefile', line 14):
+	$(LEX) -o lex.yy.c lexer.ll
 	
 
 # Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
-
-ast.o: ast.cc ast.cc ast.hh ASTVis.hpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `ast'
-#  Last modified 2025-04-24 02:58:10
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
-	
 
 clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 40):
-	rm -f $(TARGET) $(OBJS) $(LEX_SRC) $(BISON_SRC) $(BISON_HDR) *.output
+#  commands to execute (from `Makefile', line 21):
+	rm -f api_parser lex.yy.c parser.tab.cc parser.tab.hh
+	rm -f *.o *~
 	
 
-# Not a target:
-ASTVis.hpp:
-#  Implicit rule search has been done.
-#  Last modified 2025-04-23 23:30:09
+api_parser: parser.tab.cc lex.yy.c ast.cc ASTVis.cc main.cc
+#  Implicit rule search has not been done.
+#  Last modified 2025-04-24 22:44:36
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-api_parser: ast.o ASTVis.o main.o parser.tab.o lex.yy.o
-#  Implicit rule search has not been done.
-#  Implicit/static pattern stem: `'
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := api_parser
-# automatic
-# % := 
-# automatic
-# * := 
-# automatic
-# + := ast.o ASTVis.o main.o parser.tab.o lex.yy.o
-# automatic
-# | := 
-# automatic
-# < := ast.o
-# automatic
-# ^ := ast.o ASTVis.o main.o parser.tab.o lex.yy.o
-# automatic
-# ? := ast.o ASTVis.o main.o parser.tab.o lex.yy.o
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
-#  commands to execute (from `Makefile', line 22):
-	$(CXX) $(CXXFLAGS) -o $@ $^ -ll
+#  commands to execute (from `Makefile', line 18):
+	$(CXX) $(CXXFLAGS) -o api_parser parser.tab.cc lex.yy.c ast.cc ASTVis.cc main.cc
 	
 
 # Not a target:
 ast.cc:
 #  Implicit rule search has been done.
-#  Last modified 2025-04-24 01:03:52
+#  Last modified 2025-04-24 22:43:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-main.o: main.cc main.cc parser.tab.hh ast.hh ASTVis.hpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `main'
-#  Last modified 2025-04-24 02:58:12
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
-	
 
 # Not a target:
 lexer.ll:
 #  Implicit rule search has been done.
-#  Last modified 2025-04-24 02:49:02
+ 
+#  Last modified 2025-04-24 22:13:26
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-parser.tab.o: parser.tab.cc parser.tab.cc parser.tab.hh ast.hh
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `parser.tab'
-#  Last modified 2025-04-24 02:58:13
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
-	
 
 # Not a target:
 main.cc:
 #  Implicit rule search has been done.
-#  Last modified 2025-04-24 02:06:19
+#  Last modified 2025-04-24 22:43:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-ASTVis.o: ASTVis.cc ASTVis.cc ASTVis.hpp ast.hh
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `ASTVis'
-#  Last modified 2025-04-24 02:58:11
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
-	
 
 # files hash-table stats:
-# Load=22/1024=2%, Rehash=0, Collisions=0/73=0%
+# Load=15/1024=1%, Rehash=0, Collisions=0/40=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -424,6 +317,6 @@ ASTVis.o: ASTVis.cc ASTVis.cc ASTVis.hpp ast.hh
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Apr 24 12:03:57 2025
+# Finished Make data base on Thu Apr 24 23:16:54 2025
 
  
