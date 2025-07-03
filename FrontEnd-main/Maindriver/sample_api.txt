@@ -1,0 +1,19 @@
+Global Variable 
+U : map;
+
+Function Declaration
+signup : string -> string -> string
+
+
+
+// API specification
+SIGNUP_OK:
+PRECONDITION: U[uid] = NIL
+signup(uid, p) ==> (OK)
+POSTCONDITION: U' = U[uid -> p]
+
+-------------------------------------------------------------------------------
+SIGNUP_NOTOK:
+PRECONDITION: U[123] = NIL       
+signup(uid, 456) ==> (OK)        
+POSTCONDITION: U' = true
