@@ -1,0 +1,13 @@
+g++ -v -o api_parser ast.o ASTVis.o main.o parser.tab.o lex.yy.o -ll
+Apple clang version 16.0.0 (clang-1600.0.26.6)
+Target: x86_64-apple-darwin23.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 14.0.0 15.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o api_parser -L/usr/local/lib ast.o ASTVis.o main.o parser.tab.o lex.yy.o -ll -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a
+Undefined symbols for architecture x86_64:
+  "_astRoot", referenced from:
+      _main in main.o
+      _main in main.o
+ld: symbol(s) not found for architecture x86_64
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [api_parser] Error 1
